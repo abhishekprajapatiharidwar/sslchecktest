@@ -1,0 +1,48 @@
+{
+  "name": "ngstatic-portfolio",
+  "version": "1.0.0",
+  "description": "Beautiful static portfolio website with CI/CD deployment",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "npx http-server . -p 8000 -c-1",
+    "test": "echo \"Opening test suite at http://localhost:8000/test.html\"",
+    "build": "echo \"Static site - no build process required\"",
+    "deploy": "echo \"Deployment handled by GitHub Actions\"",
+    "lint": "echo \"Add your linting commands here\"",
+    "format": "echo \"Add your formatting commands here\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/ngstatic.git"
+  },
+  "keywords": [
+    "portfolio",
+    "static-site",
+    "html",
+    "css",
+    "javascript",
+    "responsive",
+    "github-pages",
+    "ci-cd",
+    "modern-ui"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/ngstatic/issues"
+  },
+  "homepage": "https://yourusername.github.io/ngstatic",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

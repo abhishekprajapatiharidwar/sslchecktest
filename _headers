@@ -1,0 +1,67 @@
+# Security Headers for Netlify Deployment
+/*
+  # Strict Transport Security (HSTS)
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # Content Security Policy (CSP)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; media-src 'self'; worker-src 'none';
+
+  # X-Frame-Options
+  X-Frame-Options: DENY
+
+  # X-Content-Type-Options
+  X-Content-Type-Options: nosniff
+
+  # X-XSS-Protection
+  X-XSS-Protection: 1; mode=block
+
+  # Referrer Policy
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Permissions Policy
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), screen-wake-lock=(), web-share=()
+
+  # Cross-Origin Policies
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+  # Additional Security Headers
+  X-Permitted-Cross-Domain-Policies: none
+  X-Download-Options: noopen
+  X-DNS-Prefetch-Control: off
+  
+  # Cache Control for security
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# CSS Files
+/*.css
+  Cache-Control: public, max-age=86400
+  Content-Type: text/css; charset=utf-8
+
+# JavaScript Files  
+/*.js
+  Cache-Control: public, max-age=86400
+  Content-Type: application/javascript; charset=utf-8
+
+# Font Files
+/*.woff2
+  Cache-Control: public, max-age=31536000
+  Cross-Origin-Resource-Policy: cross-origin
+
+# Image Files
+/*.jpg
+  Cache-Control: public, max-age=31536000
+/*.jpeg
+  Cache-Control: public, max-age=31536000
+/*.png
+  Cache-Control: public, max-age=31536000
+/*.svg
+  Cache-Control: public, max-age=31536000
+/*.webp
+  Cache-Control: public, max-age=31536000
+
+# HTML Files (more restrictive caching)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Type: text/html; charset=utf-8
